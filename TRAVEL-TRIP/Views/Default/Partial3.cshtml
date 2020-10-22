@@ -1,0 +1,15 @@
+﻿@using TRAVEL_TRIP.Models.classes;
+@model List<Blog>
+<div class="padding">
+    <h4>En Popüler 10 Blog</h4>
+    @{int i = 0; }
+        @foreach (var x in Model)
+        {
+        <ul class="list list-pad">
+            <li class="list-bg"><span>@{i++;} @i.</span><a href="/Blog/BlogDetay/@x.ID">@x.BASLIK</a></li>
+
+        </ul>
+    }
+
+    <a href="#" class="link1">Tüm otelleri gör</a>
+</div>

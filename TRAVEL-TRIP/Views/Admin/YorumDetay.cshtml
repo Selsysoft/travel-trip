@@ -1,0 +1,128 @@
+﻿@model TRAVEL_TRIP.Models.classes.Yorumlar
+@{
+    ViewBag.Title = "YorumDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .s4 {
+            
+        }
+
+        .iconbtn {
+            width: 80px;
+            height: 80px;
+            text-decoration: none;
+            margin: 20px;
+            position: relative;
+            font-size: 30px;
+            border-radius: 50%;
+        }
+
+            .iconbtn::before {
+                position: absolute;
+                z-index: 1;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+            .iconbtn::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border-radius: 50%;
+                z-index: 0;
+            }
+
+        
+
+        .s4 .iconbtn {
+            border: 4px solid #44BDF0;
+            color: #34495e;
+        }
+
+            .s4 .iconbtn::after {
+                background: #44BDF0;
+                transition: 0.4s;
+            }
+
+            .s4 .iconbtn:hover::after {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+
+            .s4 .iconbtn:hover {
+                color: #44BDF0;
+            }
+
+        @@keyframes ro {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+<body>
+   
+    <section class="s4">
+        <h4>
+    <a href="/Admin/YorumListesi/" class=" iconbtn fas fa-backspace"></a>
+
+    Yorum Detayı
+</h4>
+        
+    </section>
+    
+    <br />
+
+
+    <h6>Yorum Id</h6>
+    <div class="form-group row">
+        <div class="col-8">
+            @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <h6>Kullanıcı Adı</h6>
+    <div class="form-group row">
+        <div class="col-8">
+            @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control", Style = "background:#44BDF0; color:white; font-size:medium ", PlaceHolder = " Blog başlığı giriniz..." })
+        </div>
+    </div>
+    <br />
+    <h6>Mail Adresi</h6>
+    <div class="form-group row">
+        <div class="col-8">
+            @Html.TextBoxFor(x => x.MAIL, new { @class = "form-control", Style = "background:#44BDF0; color:white; font-size:medium ", PlaceHolder = " Blog tarihi giriniz..." })
+            @*<input class="form-control" style="background:#44BDF0; color:white; font-size:medium " type="date" id="example-datetime-local-input">*@
+        </div>
+    </div>
+    <br />
+    <h6>Yorum</h6>
+    <div class="form-group row">
+        <div class="col-8">
+            @Html.TextAreaFor(x => x.YORUM, new { @class = "form-control", Style = "background:#44BDF0; color:white; font-size:medium", PlaceHolder = " Blog açıklaması giriniz..." })
+
+        </div>
+    </div>
+
+
+
+</body>

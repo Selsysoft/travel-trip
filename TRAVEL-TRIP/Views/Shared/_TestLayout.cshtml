@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TRAVEL TRIP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web/js/jquery.min.js"></script>
+    <script src="~/web/js/responsiveslides.min.js"></script>
+
+
+
+
+
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo"><a href="/Default/Index/"><img src="~/web/images/travel.png" alt="" width="204px" height="149px" /></a></div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="~/web/images/contact.png" alt="">
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Whatsapp: +91 00000-55555</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+    </div>
+    <div class="header-bottom">
+
+
+        <div class="wrap">
+
+            <ul id="nav">
+
+                <li><a href="/Default/Index/">Anasayfa</a></li>
+                <li><a class="hsubs" href="/About/Index/">Hakkımızda</a></li>
+                <li>
+                    <a class="hsubs" href="#">Rehber</a>
+                    <ul class="subs">
+                        <li><a href="#">Oteller</a></li>
+                        <li><a href="#">Restoranlar</a></li>
+                        <li><a href="#">Müzeler</a></li>
+                    </ul>
+                </li>
+                <li><a class="hsubs" href="/Blog/Index/">Blog</a></li>
+                <li><a href="/Login/Login/">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        @RenderBody()
+
+        <div class="footer-bottom" style="text-align:center;">
+            <div class="wrap">
+                <div class="copyright" style="color:gray;">
+                    <p> © 2020 Travel & Trip Widget . All rights reserved | Design by <a href="https://www.linkedin.com/in/lselcukl/" target="_blank" style="color:white;">Selçuk Türedi</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+
+
+
+    <title>Admin Sayfası</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/~/sidebar/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/sidebar/css/style.css">
+</head>
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="p-4">
+                <h1><a href="index.html" class="logo">Yönetim <span>İşlemler</span></a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li>
+                        <a href="/Admin/Index/"><span class="fa fa-suitcase mr-3"></span>Bloglar</a>
+                    </li>
+                    <li>
+                        <a href="/Admin/YorumListesi/"><span class="fa fa-bars mr-3"></span>Yorumlar</a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Iletisim/"><span class="fa fa-paper-plane mr-3"></span>İletişim</a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Hakkimizda/"><span class="fa fa-user mr-3"></span>Hakkımızda</a>
+                    </li>
+                    <li>
+                        <a href="/Default/Index/"><span class="fa fa-cogs mr-3"></span> Siteye Dön</a>
+                    </li>
+                    <li>
+                        <a  data-toggle="modal" data-target="#exampleModalCenter"><span class="fa fa-cogs mr-3"></span> Çıkış Yap</a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title" style="color:black" id="exampleModalLongTitle">Çıkış</h3>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" style="color:black">
+                                        Gerçekten çıkış yapmak istiyor musunuz?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-secondary" data-dismiss="modal" style="font-size:medium; width: 64px; ">İptal</a>
+                                        
+                                            <a href="/Login/LogOut/" type="submit" class="btn btn-primary" style=" font-size: medium; width: 64px;">Evet</a>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+
+                <div class="footer">
+                    <div class="copyright" style="color:gray;">
+                        <p> © 2020 Travel & Trip Widget . All rights reserved | Design by <a href="https://www.linkedin.com/in/lselcukl/" target="_blank" style="color:white;">Selçuk Türedi</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+
+
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="w3-container w3-teal">
+                <h2>
+                    Admin Yönetim Paneli
+
+                </h2>
+
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+
+    <script src="~/sidebar/js/jquery.min.js"></script>
+    <script src="~/sidebar/js/popper.js"></script>
+    <script src="~/sidebar/js/bootstrap.min.js"></script>
+    <script src="~/sidebar/js/main.js"></script>
+</body>
+</html>
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

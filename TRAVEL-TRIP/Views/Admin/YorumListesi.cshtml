@@ -1,0 +1,67 @@
+﻿@using TRAVEL_TRIP.Models.classes
+@model List<Yorumlar>
+@{
+    ViewBag.Title = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h4 style="margin:20px">Yorum Listesi</h4>
+<br />
+<table id="tbl1" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>KULLANICI ADI</th>
+            <th>MAIL</th>
+            <th>YORUM</th>
+            <th>BLOG</th>
+            <th>SİL</th>
+            <th>
+                GÜNCELLE
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-repeat pull-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                </svg>
+            </th>
+            <th>DETAY</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <th>@x.ID</th>
+                <td>@x.KULLANICIADI</td>
+                <td>@x.MAIL</td>
+                <td>@x.YORUM</td>
+                <td>@x.Blog.BASLIK</td>
+                <td><a href="/Admin/YorumDelete/@x.ID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Admin/YorumGet/@x.ID" class="btn btn-success">GÜNCELLE</a></td>
+                <td><a href="/Admin/YorumDetay/@x.ID" class="btn btn-default">DETAY</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/Admin/YorumCreate" class="btn btn-secondary" style="margin:20px; ">YENİ YORUM OLUŞTUR</a>
+
+
+@*
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script>
+        $('#tbl1').dataTable({});
+    </script>
+*@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>

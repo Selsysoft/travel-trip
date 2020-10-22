@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Giriş Sayfası</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" Master  Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/web3/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//fonts.googleapis.com/css?family=Cormorant+SC:300,400,500,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+
+<body>
+    <div class="padding-all">
+        <div class="header">
+            <h1>Tatil Seyehat Bloğu Giriş Formu</h1>
+        </div>
+
+        <div class="design-w3l">
+            <div class="mail-form-agile">
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    <input type="text" name="KULLANICI" placeholder="Kullanıcı Adı" required="" />
+                    <input type="password" name="SIFRE" class="padding" placeholder="Şifre" required="" />
+                    <input type="submit" value="Giriş Yap">
+                }
+
+
+            </div>
+            <div class="clear"> </div>
+        </div>
+
+        <div class="footer-bottom" style="text-align:center;">
+            <div class="wrap">
+                <div class="copyright" style="color:gray;">
+                    <p> © 2020 Travel & Trip Widget . All rights reserved | Design by <a href="https://www.linkedin.com/in/lselcukl/" target="_blank" style="color:white;">Selçuk Türedi</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

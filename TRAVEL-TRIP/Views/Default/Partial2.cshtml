@@ -1,0 +1,65 @@
+﻿@using TRAVEL_TRIP.Models.classes;
+@model List<Blog>
+@foreach (var x in Model)
+{
+    <div class="right">
+        <div class="bot-left container">
+            <img id="@x.ID" src="@x.BLOGIMAGE" alt="@x.BASLIK" class="image" style="width:100%;max-width:300px"  />
+            <div class="middle">
+                <div class="text">
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                </div>
+            </div>
+            
+            <div id="myModal" class="modal">
+
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content" id="img01">
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption"></div>
+                <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("@x.ID");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            
+        }
+                </script>
+            </div>
+        </div>
+        <div class="left-text">
+
+            <h4>@x.BASLIK</h4>
+            <h6>@x.TARIH.ToString("dd.MM.yyyy")</h6>
+            <p>
+                @if (@x.ACIKLAMA.Length > 80)
+                {@x.ACIKLAMA.Substring(0, 80)<a>&nbsp;...</a>}
+                else{@x.ACIKLAMA}
+                
+            </p>
+            <p><a href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+        </div>
+    </div>
+}

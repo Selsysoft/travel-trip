@@ -1,0 +1,40 @@
+﻿@model TRAVEL_TRIP.Models.classes.Blog
+@{
+    ViewBag.Title = "BlogCreate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2 style="margin:20px">Blog Oluşturma</h2>
+
+<br />
+<form class="form-group" method="post">
+    <h6>Blog Başlığı</h6>
+    <div class="form-group row">
+        <div class="col-8">
+            @Html.TextBoxFor(x => x.BASLIK, new { @class = "form-control", Style = "background:#44BDF0; color:white; font-size:medium ", PlaceHolder = " Blog başlığı giriniz..." })
+        </div>
+    </div>
+    <br />
+    <h6>Blog Tarihi</h6>
+    <div class="form-group row">
+        <div class="col-8">
+            @Html.TextBoxFor(x=>x.TARIH, new { @class = "form-control", Style = "background:#44BDF0; color:white; font-size:medium ", PlaceHolder = " Blog tarihi giriniz..." })
+            @*<input class="form-control" style="background:#44BDF0; color:white; font-size:medium " type="date" id="example-datetime-local-input">*@
+        </div>
+    </div>
+    <br />
+    <h6>Blog Fotoğrafı (Geçerli bir fotoğraf linki giriniz.)</h6>
+    <div class="form-group row">
+        <div class="col-8">
+            @Html.TextBoxFor(x => x.BLOGIMAGE, new { @class = "form-control", Style = "background:#44BDF0; color:white; font-size:medium ", PlaceHolder = " Blog fotoğraf linki..." })
+        </div>
+    </div>
+    <br />
+    <h6>Blog Açıklaması</h6>
+    <div class="form-group row">
+        <div class="col-8">
+            @Html.TextAreaFor(x => x.ACIKLAMA, new { @class = "form-control", Style = "background:#44BDF0; color:white; font-size:medium; ", PlaceHolder = " Blog açıklması giriniz..." })
+        </div>
+    </div>
+    <br />
+    <button href="/Admin/BlogCreate" class="btn btn-secondary ">BLOG OLUŞTUR</button>
+</form>
